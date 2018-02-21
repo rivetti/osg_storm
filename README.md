@@ -1,1 +1,9 @@
 # osg_storm
+Online Shuffle Grouping (OSG) implementation for Apache Storm
+
+This repository contains the implementation of the Distribution-aware Key Grouping (DKG) algorithm targeting Apache Storm (through a class extending a the CustomStreamGrouping inteface).
+
+We present the details of this algorithm in the paper Nicoló Rivetti, Emmanuelle Anceaume, Yann Busnel, Leonardo Querzoni, and Bruno Sericola. 2016. Online Scheduling for Shuffle Grouping in Distributed Stream Processing Systems. In Proceedings of the 17th International Middleware Conference (Middleware '16).
+
+Abstract:
+Shuffle grouping is a technique used by stream processing frameworks to share input load among parallel instances of stateless operators. With shuffle grouping each tuple of a stream can be assigned to any available operator instance, independently from any previous assignment. A common approach to implement shuffle grouping is to adopt a Round-Robin policy, a simple solution that fares well as long as the tuple execution time is almost the same for all the tuples. However, such an assumption rarely holds in real cases where execution time strongly depends on tuple content. As a consequence, parallel stateless operators within stream processing applications may experience unpredictable unbalance that, in the end, causes undesirable increase in tuple completion times. In this paper we propose Online Shuffle Grouping (OSG), a novel approach to shuffle grouping aimed at reducing the overall tuple completion time. OSG estimates the execution time of each tuple, enabling a proactive and online scheduling of input load to the target operator instances. Sketches are used to efficiently store the otherwise large amount of information required to schedule incoming load. We provide a probabilistic analysis and illustrate, through both simulations and a running prototype, its impact on stream processing applications.
